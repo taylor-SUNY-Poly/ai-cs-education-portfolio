@@ -6,7 +6,7 @@ for the Farama Foundation **Gymnasium LunarLander-v3** environment using the
 Python code directly; instead, they learn how changing configuration “knobs”
 (hyperparameters) affects learning and final agent performance.
 
-![Lunar Lander Training](imgs/rollout_3.2.png)
+![Lunar Lander Training](imgs/rollout_3.2.gif)
 
 The lab is designed for an upper-level AI or machine learning course and has been deployed
 in **CS 295 – Artificial Intelligence Applications** at SUNY Polytechnic Institute.
