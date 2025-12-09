@@ -1,0 +1,149 @@
+# Lunar Lander Neuroevolution Lab (NEAT + Gymnasium)
+
+This directory contains a multi-phase lab where students evolve neural network controllers
+for the Farama Foundation **Gymnasium LunarLander-v3** environment using the
+**Neuroevolution of Augmenting Topologies (NEAT)** algorithm. Students do not modify the
+Python code directly; instead, they learn how changing configuration “knobs”
+(hyperparameters) affects learning and final agent performance. :contentReference[oaicite:0]{index=0}
+
+The lab is designed for an upper-level AI or machine learning course and has been deployed
+in **CS 295 – Artificial Intelligence Applications** at SUNY Polytechnic Institute.
+
+## Big Idea
+
+> **Let students experience neuroevolution as a systems-design problem, not just a black-box algorithm.**
+
+Over three phases, students:
+
+- Train NEAT controllers to solve LunarLander-v3.
+- Explore the effects of:
+  - Population size and species parameters
+  - Weight and bias mutation settings
+  - Connection add/delete probabilities
+  - Node add/delete probabilities and activation options
+- Analyze fitness curves, network diagrams, and rollout behavior.
+- Reflect on trade-offs between exploration vs. exploitation, network complexity vs.
+  performance, and training time vs. solution quality. :contentReference[oaicite:1]{index=1}
+
+## Learning Goals
+
+By the end of this lab, students should be able to:
+
+- Explain the difference between **fixed-topology** and **structurally evolving** neural
+  networks.
+- Describe how NEAT uses **species**, **fitness**, and **structural mutations** to explore
+  a search space.
+- Interpret NEAT hyperparameters and reason about their impact on learning dynamics. :contentReference[oaicite:2]{index=2}
+- Run controlled experiments and compare runs using:
+  - Fitness vs. generation plots
+  - Network diagrams
+  - Evaluation statistics and success criteria
+- Tune NEAT configurations to improve performance on a challenging control task.
+
+## Directory Structure
+
+At a high level, the directory is organized as follows:
+
+- `Lab Instructions – Lunar Lander.pdf`  
+  Student-facing lab handout describing the environment setup, workflow for each phase,
+  allowed configuration changes, and reflection questions. :contentReference[oaicite:3]{index=3}
+
+- `Neat Config Guide.pdf`  
+  A plain-English reference that explains each NEAT config option, grouped by concept
+  (population, genome structure, mutation rates, species, stagnation, reproduction, etc.).
+  Students use this guide when designing experiments and interpreting results. :contentReference[oaicite:4]{index=4}
+
+- `src/`  
+  Source code and configuration files used in the lab:
+  - `lunarlander.py` – main script for training and visualizing NEAT agents
+  - `report_utils.py` – utilities for:
+    - plotting fitness curves
+    - drawing winner network diagrams
+    - generating animated GIF rollouts
+    - writing Markdown summary reports
+  - `lunarlander_phase1.config` – NEAT config for Phase 1 (fixed topology)
+  - `lunarlander_phase2.config` – NEAT config for Phase 2 (connection-level structural mutation)
+  - `lunarlander_phase3.config` – NEAT config for Phase 3 (full NEAT with node-level mutation)
+
+All training runs and analysis are driven by **config changes**, not code edits.
+
+## Lab Design: Three Phases of NEAT
+
+The lab is structured into three conceptual phases, each unlocking more of NEAT’s
+capabilities. :contentReference[oaicite:5]{index=5}
+
+### Phase 1 – Fixed Topology, Evolving Weights & Biases
+
+- Network topology has:
+  - A single hidden layer
+  - No new nodes or connections added/removed during evolution
+- Students tune:
+  - Population size (`pop_size`)
+  - Hidden layer size (`num_hidden`)
+  - Weight and bias mutation parameters
+  - Species/stagnation/reproduction settings
+- Focus: learning how **continuous-valued hyperparameters** (mutation strength, population
+  size) affect stability, convergence, and solution quality.
+
+### Phase 2 – Evolving Connection Structure
+
+- NEAT is allowed to:
+  - Add and delete **connections** between existing nodes.
+- Students build on their best Phase 1 settings and tune:
+  - `conn_add_prob`, `conn_delete_prob`
+  - Connection enable/disable behavior
+- Focus: exploring how **network sparsity vs. density** and connection-level mutations
+  influence learning, diversity, and performance.
+
+### Phase 3 – Full NEAT: Evolving Nodes & Activations
+
+- NEAT can now:
+  - Add and delete **hidden nodes**
+  - (Optionally) mutate node activation functions
+- Students tune:
+  - `node_add_prob`, `node_delete_prob`
+  - Activation mutation and response-related settings (optional)
+- Focus: understanding how **topological complexity** emerges and how it relates to
+  generalization and training time.
+
+## Experiment Workflow
+
+For each phase, students follow a consistent experimental pattern: :contentReference[oaicite:6]{index=6}
+
+1. Run a **baseline configuration** (provided).
+2. Examine the automatically generated Markdown report for that run:
+   - Training summary
+   - Evaluation summary
+   - Fitness plot
+   - Network diagram
+   - Node/connection tables
+3. Select a small set of **config knobs** to change (based on the Neat Config Guide). :contentReference[oaicite:7]{index=7}
+4. Run new experiments, track run IDs and key metrics in a run log.
+5. Compare results, interpret differences, and refine hypotheses.
+6. Conclude each phase with a **performance challenge** using a best-shot configuration.
+
+## Integration into the Course
+
+This lab is intended as a multi-week project in an applied AI or machine learning course.
+In CS 295 – Artificial Intelligence Applications, it is used to:
+
+- Connect theoretical discussion of **evolutionary algorithms** to a rich, interactive
+  control task.
+- Reinforce core ML ideas (hyperparameters, overfitting, search vs. optimization) in a
+  non-gradient-based setting.
+- Give students experience reading and modifying **config-driven systems**, mirroring
+  how many real-world ML frameworks are used in practice.
+
+## How to Use This Directory
+
+Instructors can:
+
+- Directly assign the included **Lab Instructions** and **Neat Config Guide** to students.
+- Provide the `src/` directory as starter code.
+- Ask students to:
+  - Maintain a run log
+  - Submit Markdown reports and reflection answers
+  - Turn in final “best configuration” files for each phase
+
+This directory serves as a complete, reusable module for teaching **neuroevolution,
+hyperparameter tuning, and algorithmic analysis** in a hands-on, visual way.
