@@ -55,24 +55,6 @@ Students:
 This lab integrates Earth Science content (flooding, watersheds, topography) with
 civic-relevance and risk assessment.
 
-### 3. Investigating the Taku Glacier
-
-In this lab, students analyze historical maps of the **Taku Glacier** in Alaska to compute
-rates of glacial advance, predict future positions of the terminus, and interpret the
-results in the context of glacial budgets and climate change. 
-
-Students:
-
-- Use mapped historical terminus positions (1909, 1931, 1948) to calculate **rates of
-  movement** in km/year and construct a **glacial budget** over different time spans. 
-- Predict the position of the glacier terminus for 1980 and compare their predictions
-  to actual map data. 
-- Repeat the process using a 1980 map to forecast the terminus position in 2019, then
-  check against the current position using Google Earth. 
-- Reflect on why their predictions differ from reality and discuss factors affecting
-  glacial advance/retreat (temperature, precipitation, climate trends). 
-- Extend the reasoning to another glacier (Rhone Glacier, Switzerland) using paired
-  historical and modern imagery to consider regional impacts of glacier loss. 
 
 ## Files in This Directory
 
@@ -80,7 +62,6 @@ Students:
 - `Lab Report - Exploring the Orbits of Earth and Mars.pdf`
 - `Procedure - Hurricane Irene and the Gilboa Dam.pdf`  
 - `Lab Report - Hurricane Irene and the Gilboa Dam.pdf`
-- `Lab - Investigating the Taku Glacier.pdf`
 
 Each lab set consists of a **procedure** and a **student lab report**
 template designed for one or two 80-minute class periods.
